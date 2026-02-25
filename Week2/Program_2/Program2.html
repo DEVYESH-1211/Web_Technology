@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Record - Enhanced Animation</title>
+
+<style>
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(-45deg, #89f7fe, #66a6ff, #fbc2eb, #a6c1ee);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    width: 450px;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    animation: slideIn 1.5s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.3);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    animation: borderMove 3s linear infinite;
+}
+
+h2 {
+    text-align: center;
+    animation: glowText 2s infinite alternate;
+}
+
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s ease;
+}
+
+tr:hover td {
+    background: #f1f8ff;
+}
+
+.label {
+    font-weight: bold;
+    background: #eef2ff;
+    width: 40%;
+}
+
+/* Button */
+.btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+}
+
+/* Animations */
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes glowText {
+    from {
+        color: darkblue;
+        text-shadow: 0 0 5px skyblue;
+    }
+    to {
+        color: #ff4b2b;
+        text-shadow: 0 0 15px orange;
+    }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes borderMove {
+    0% { background-position: 0%; }
+    100% { background-position: 100%; }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Student Record</h2>
+
+    <table>
+        <tr>
+            <td class="label">Student Name</td>
+            <td>Devyesh</td>
+        </tr>
+        <tr>
+            <td class="label">Roll Number</td>
+            <td>241801049</td>
+        </tr>
+        <tr>
+            <td class="label">Course</td>
+            <td>B.Tech AIDS</td>
+        </tr>
+        <tr>
+            <td class="label">Semester</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td class="label">Email</td>
+            <td>devyesh.c.2024.aids@rajalakshmi.edu.in</td>
+        </tr>
+        <tr>
+            <td class="label">Phone</td>
+            <td>9876543210</td>
+        </tr>
+    </table>
+
+    <button class="btn">Download Record</button>
+</div>
+
+</body>
+</html>
